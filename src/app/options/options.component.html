@@ -1,4 +1,4 @@
-<div id="inFavourOption" class="option">
+<!-- <div id="inFavourOption" class="option">
   <input type="radio" class="ball" name="option" value="inFavour"/>
   <label>In Favour</label>
 </div>
@@ -9,4 +9,6 @@
 <div id="againstOption" class="option">
   <input type="radio" class="ball" name="option" value="against"/>
   <label>Against</label>
-</div>
+</div> -->
+<app-option class="option" *ngFor="let item of items" [value]="item.value" [isSelected]="item.isSelected"
+  [label]="item.label" (optionItemSelected)="optionItemSelected($event)"></app-option>

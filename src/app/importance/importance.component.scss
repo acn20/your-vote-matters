@@ -11,25 +11,3 @@ p {
 span {
     color: #0d63b8;
 }
-
-$primary-color: #0d63b8;
-
-.question-item-focus {
-    color: #fff;
-    background-color: $primary-color;
-}
-
-.ball {
-    margin: 0 5px 5px;
-    padding: 15px;
-    border: 1px solid $primary-color;
-    border-radius: 50%;
-
-    &:hover {
-        @extend .question-item-focus;
-    }
-}
-
-.selected {
-    @extend .question-item-focus;
-}

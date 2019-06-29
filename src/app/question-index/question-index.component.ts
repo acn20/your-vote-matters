@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-question-index',
@@ -7,11 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class QuestionIndexComponent implements OnInit {
   @Input() index: number;
-  isSelected = false;
+  @Input() isSelected: boolean;
+  @Output() questionItemSelected = new EventEmitter<number>();
+
   
   constructor() { }
 
   ngOnInit() {
+  }
+
+  questionClicked() {
+    this.questionItemSelected.emit();
   }
 
 }

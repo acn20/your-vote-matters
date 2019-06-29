@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,9 @@ import { QuestionListComponent } from './question-list/question-list.component';
 import { ArgumentsComponent } from './arguments/arguments.component';
 import { MoreDetailsComponent } from './more-details/more-details.component';
 import { QuestionIndexComponent } from './question-index/question-index.component';
+import { QuestionsService } from './questions.service';
+import { ImportanceItemComponent } from './importance-item/importance-item.component';
+import { OptionComponent } from './option/option.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +24,18 @@ import { QuestionIndexComponent } from './question-index/question-index.componen
     QuestionListComponent,
     ArgumentsComponent,
     MoreDetailsComponent,
-    QuestionIndexComponent
+    QuestionIndexComponent,
+    ImportanceItemComponent,
+    OptionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    QuestionsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

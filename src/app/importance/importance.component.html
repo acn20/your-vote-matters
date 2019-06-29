@@ -1,6 +1,7 @@
 <p>
   <span>How important is this to you?</span> (Select the level of importance)
 </p>
-<div class="ball">!</div>
-<div class="ball">!!</div>
-<div class="ball">!!!</div>
+
+<app-importance-item *ngFor="let item of items" [value]="item.value" [isSelected]="item.isSelected" (valueSelected)="importanceItemSelected($event)"></app-importance-item>
+<!-- (valueSelected)="importanceItemSelected($event)" We are listening for the valueSelected event and we are processing it in the ImportanceItemSelected function. 
+  We know that valueSelected emits a number which would be passed as a parameter ($event) in the ImportanceItemSelected function-->

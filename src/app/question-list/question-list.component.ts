@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-question-list',
@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class QuestionListComponent implements OnInit {
   @Input() count: number;
+  @Output() questionSelected = new EventEmitter<number>();
   numbersRange: Array<number> = [];
 
   constructor() { }
@@ -15,6 +16,10 @@ export class QuestionListComponent implements OnInit {
     for(let i = 1; i <= this.count; i++) {
       this.numbersRange.push(i);
     }
+  }
+
+  questionItemSelected() {
+
   }
 
 }

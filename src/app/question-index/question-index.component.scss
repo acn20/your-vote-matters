@@ -18,6 +18,7 @@ $primary-color: #0d63b8;
 
     &:hover {
         @extend .question-item-focus;
+        cursor: pointer;
     }
 }
 

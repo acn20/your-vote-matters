@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Question } from '../models/question';
 
 @Component({
   selector: 'app-arguments',
@@ -6,8 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./arguments.component.scss']
 })
 export class ArgumentsComponent implements OnInit {
-  @Input() forText: string;
-  @Input() againstText: string;
+  @Input() question: Question;
 
   constructor() { }
 

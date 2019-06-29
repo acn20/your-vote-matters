@@ -1,8 +1,12 @@
-<div>
-<app-question [index]="1" [text]="'Should there be a tax on companies that use robots, as a way to support the social security system?'"></app-question>
-<app-importance></app-importance>
-<app-options></app-options>
-<app-question-list [count]="25"></app-question-list>
-<app-arguments></app-arguments>
-<app-more-details></app-more-details>
+<div *ngIf="!isLoading">
+    <app-question [index]="1" [question]="currentQuestion"></app-question>
+    <app-importance (importanceSelected)="function1($event)"></app-importance>
+    <app-options (optionSelected)="function2($event)"></app-options>
+    <app-question-list [count]="questions.length" (questionSelected)="function3($event)"></app-question-list>
+    <app-arguments [question]="currentQuestion"></app-arguments><!--[question] e parametru-->
+    <app-more-details></app-more-details>
+</div>
+
+<div *ngIf="isLoading">
+    <p>Please wait, the page is loading...</p>
 </div>
